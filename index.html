@@ -4,9 +4,11 @@
 <p>LEGO: Let’s Encrypt client and ACME library written in Go.
 Please refer to LEGO docs at <a href="https://go-acme.github.io/lego">https://go-acme.github.io/lego</a></p>
 <h3 id="dns-updater-usage-">DNS Updater usage:</h3>
-<pre><code>dnsu help
+<pre><code>
+# for help
+dnsu help
 
-<span class="hljs-comment"># for cPanel provider</span>
+# for cPanel provider
 dnsu cpnael --url <span class="hljs-variable">&lt;cPanel URL&gt;</span> --user <span class="hljs-variable">&lt;cPanel User&gt;</span> --token <span class="hljs-variable">&lt;cPanel Token&gt;</span> info <span class="hljs-variable">&lt;domain name&gt;</span> <span class="hljs-keyword">for</span> A record&gt;
 dnsu cpnael --url <span class="hljs-variable">&lt;cPanel URL&gt;</span> --user <span class="hljs-variable">&lt;cPanel User&gt;</span> --token <span class="hljs-variable">&lt;cPanel Token&gt;</span> present <span class="hljs-variable">&lt;domain name&gt;</span> <span class="hljs-keyword">for</span> TXT record&gt; <span class="hljs-variable">&lt;auth-key&gt;</span>'
 dnsu cpnael --url <span class="hljs-variable">&lt;cPanel URL&gt;</span> --user <span class="hljs-variable">&lt;cPanel User&gt;</span> --token <span class="hljs-variable">&lt;cPanel Token&gt;</span> cleanup <span class="hljs-variable">&lt;domain name&gt;</span> <span class="hljs-keyword">for</span> TXT record&gt; <span class="hljs-variable">&lt;auth-key&gt;</span>'
@@ -15,10 +17,15 @@ Support Environment Variables:
 cPanel URL: DNSU_CPANEL-URL 
 cPanel User: DNSU_CPANEL-USER  
 cPanel Token: DNSU_CPANEL-TOKEN
-</code></pre><h3 id="example-">Example:</h3>
-<pre><code><span class="hljs-comment"># for verify cPanel access</span>
-<span class="hljs-string">dnsu </span><span class="hljs-string">cpnael </span><span class="hljs-built_in">--url</span> <span class="hljs-string">"https://cpanel-hostname:2083"</span> <span class="hljs-built_in">--user</span> <span class="hljs-string">cpaneluser </span><span class="hljs-built_in">--token</span> <span class="hljs-string">"RMYKKBIT5TQ1ITFU58VZBQB5TDEYQZN4"</span> <span class="hljs-string">info </span><span class="hljs-string">'_acme-challenge.my.example.org.'</span>
-</code></pre><h3 id="example-update-dns-sh-for-lego-">Example update-dns.sh for LEGO:</h3>
+</code></pre>
+
+<h3 id="example-">Example:</h3>
+<pre><code>
+# for verify cPanel access</span>
+dnsu cpnael --url "https://cpanel-hostname:2083" --user cpaneluser --token "RMYKKBIT5TQ1ITFU58VZBQB5TDEYQZN4" info '_acme-challenge.my.example.org.'
+
+</code></pre>
+<h3 id="example-update-dns-sh-for-lego-">Example update-dns.sh for LEGO:</h3>
 <pre><code><span class="hljs-meta">#!/bin/sh</span>
 <span class="hljs-built_in">export</span> DNSU_CPANEL-URL=<span class="hljs-string">"https://cpanel-hostname:2083"</span>
 <span class="hljs-built_in">export</span> DNSU_CPANEL-USER=cpaneluser
