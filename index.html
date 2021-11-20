@@ -12,9 +12,9 @@ Please refer to LEGO docs at <a href="https://go-acme.github.io/lego">https://go
 dnsu help
 
 # for cPanel provider
-dnsu cpnael --url <span class="hljs-variable">&lt;cPanel URL&gt;</span> --user <span class="hljs-variable">&lt;cPanel User&gt;</span> --token <span class="hljs-variable">&lt;cPanel Token&gt;</span> info <span class="hljs-variable">&lt;domain name&gt;</span> <span class="hljs-keyword">for</span> A record&gt;
-dnsu cpnael --url <span class="hljs-variable">&lt;cPanel URL&gt;</span> --user <span class="hljs-variable">&lt;cPanel User&gt;</span> --token <span class="hljs-variable">&lt;cPanel Token&gt;</span> present <span class="hljs-variable">&lt;domain name&gt;</span> <span class="hljs-keyword">for</span> TXT record&gt; <span class="hljs-variable">&lt;auth-key&gt;</span>'
-dnsu cpnael --url <span class="hljs-variable">&lt;cPanel URL&gt;</span> --user <span class="hljs-variable">&lt;cPanel User&gt;</span> --token <span class="hljs-variable">&lt;cPanel Token&gt;</span> cleanup <span class="hljs-variable">&lt;domain name&gt;</span> <span class="hljs-keyword">for</span> TXT record&gt; <span class="hljs-variable">&lt;auth-key&gt;</span>'
+dnsu cpanel --url <span class="hljs-variable">&lt;cPanel URL&gt;</span> --user <span class="hljs-variable">&lt;cPanel User&gt;</span> --token <span class="hljs-variable">&lt;cPanel Token&gt;</span> info <span class="hljs-variable">&lt;domain name&gt;</span> <span class="hljs-keyword">for</span> A record&gt;
+dnsu cpanel --url <span class="hljs-variable">&lt;cPanel URL&gt;</span> --user <span class="hljs-variable">&lt;cPanel User&gt;</span> --token <span class="hljs-variable">&lt;cPanel Token&gt;</span> present <span class="hljs-variable">&lt;domain name&gt;</span> <span class="hljs-keyword">for</span> TXT record&gt; <span class="hljs-variable">&lt;auth-key&gt;</span>'
+dnsu cpanel --url <span class="hljs-variable">&lt;cPanel URL&gt;</span> --user <span class="hljs-variable">&lt;cPanel User&gt;</span> --token <span class="hljs-variable">&lt;cPanel Token&gt;</span> cleanup <span class="hljs-variable">&lt;domain name&gt;</span> <span class="hljs-keyword">for</span> TXT record&gt; <span class="hljs-variable">&lt;auth-key&gt;</span>'
 
 Support Environment Variables:
 cPanel URL: DNSU_CPANEL-URL 
@@ -25,7 +25,7 @@ cPanel Token: DNSU_CPANEL-TOKEN
 <h3 id="example-">Example:</h3>
 <pre><code>
 # for verify cPanel access</span>
-dnsu cpnael --url "https://cpanel-hostname:2083" --user cpaneluser --token "RMYKKBIT5TQ1ITFU58VZBQB5TDEYQZN4" info '_acme-challenge.my.example.org.'
+dnsu cpanel --url "https://cpanel-hostname:2083" --user cpaneluser --token "RMYKKBIT5TQ1ITFU58VZBQB5TDEYQZN4" info '_acme-challenge.my.example.org.'
 
 </code></pre>
 <h3 id="example-update-dns-sh-for-lego-">Example update-dns.sh for LEGO:</h3>
